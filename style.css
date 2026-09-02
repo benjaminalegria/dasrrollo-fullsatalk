@@ -7,3 +7,33 @@
     background-color: #3FAF68;
     border-color: #3FAF68;
 }
+
+.header {
+    background-color: #2E8B57;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+}
+
+.nav a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.logo {
+    width: 6rem;
+    height: 6rem;
+}
