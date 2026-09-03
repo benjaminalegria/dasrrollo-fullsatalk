@@ -30,6 +30,10 @@
         <button type="button" class="btn btn-secondary text-white btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#modalCarrito">
             Carrito (<span id="cartCount">0</span>)
         </button>
+
+        <button type="button" class="btn btn-secondary text-white btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#modalAdmin">
+            Administrador
+        </button>
     </nav>
 </header>
 
@@ -560,6 +564,178 @@
         </div>
     </div>
 </div>
+
+
+
+
+<div class="modal fade" id="modalAdmin" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <div class="d-flex align-items-center gap-2">
+                    <h5 class="modal-title fw-bold">Panel de Administrador</h5>
+                    <span class="badge bg-success">HuertoHogar</span>
+                </div>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-light">
+                <ul class="nav nav-pills mb-4 nav-justified bg-white p-2 rounded shadow-sm" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active fw-bold" data-bs-toggle="pill" data-bs-target="#admin-tab-productos" type="button" role="tab">
+                            📦 Productos
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link fw-bold" data-bs-toggle="pill" data-bs-target="#admin-tab-usuarios" type="button" role="tab">
+                            👥 Usuarios
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                 
+                    <div class="tab-pane fade show active" id="admin-tab-productos" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-lg-5">
+                                <div class="card border-0 shadow-sm p-3">
+                                    <h5 class="fw-bold mb-3" id="adminProdTituloForm">Nuevo Producto</h5>
+                                    <form id="formAdminModalProd">
+                                        <input type="hidden" id="adminProdIndex">
+                                        <div class="mb-2">
+                                            <label class="form-label small mb-1">Código</label>
+                                            <input type="text" class="form-control form-control-sm" id="adminProdCodigo" required placeholder="Ej: FR004">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label class="form-label small mb-1">Nombre</label>
+                                            <input type="text" class="form-control form-control-sm" id="adminProdNombre" required>
+                                        </div>
+                                        <div class="row g-2 mb-2">
+                                            <div class="col-6">
+                                                <label class="form-label small mb-1">Precio ($)</label>
+                                                <input type="number" class="form-control form-control-sm" id="adminProdPrecio" required min="1">
+                                            </div>
+                                            <div class="col-6">
+                                                <label class="form-label small mb-1">Unidad</label>
+                                                <input type="text" class="form-control form-control-sm" id="adminProdUnidad" placeholder="kilo, bolsa" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2">
+                                            <label class="form-label small mb-1">Stock</label>
+                                            <input type="number" class="form-control form-control-sm" id="adminProdStock" required min="0">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label class="form-label small mb-1">URL Imagen</label>
+                                            <input type="url" class="form-control form-control-sm" id="adminProdImagen" placeholder="https://..." required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label small mb-1">Descripción</label>
+                                            <textarea class="form-control form-control-sm" id="adminProdDescripcion" rows="2"></textarea>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button type="submit" class="btn btn-success btn-sm flex-grow-1" id="btnAdminGuardarProd">Guardar</button>
+                                            <button type="button" class="btn btn-secondary btn-sm" onclick="cancelarEdicionProd()">Limpiar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-7">
+                                <div class="card border-0 shadow-sm p-3">
+                                    <h5 class="fw-bold mb-3">Mostrar Productos</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-sm align-middle mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Código</th>
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th>Stock</th>
+                                                    <th class="text-center">Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="adminTablaProductos"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="tab-pane fade" id="admin-tab-usuarios" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-lg-5">
+                                <div class="card border-0 shadow-sm p-3">
+                                    <h5 class="fw-bold mb-3" id="adminUserTituloForm">Nuevo Usuario</h5>
+                                    <form id="formAdminModalUser">
+                                        <input type="hidden" id="adminUserIndex">
+                                        <div class="mb-2">
+                                            <label class="form-label small mb-1">Nombre Completo</label>
+                                            <input type="text" class="form-control form-control-sm" id="adminUserNombre" required>
+                                        </div>
+                                        <div class="mb-2">
+                                            <label class="form-label small mb-1">Correo Electrónico</label>
+                                            <input type="email" class="form-control form-control-sm" id="adminUserCorreo" required>
+                                        </div>
+                                        <div class="mb-2">
+                                            <label class="form-label small mb-1">Rol</label>
+                                            <select class="form-select form-select-sm" id="adminUserRol" required>
+                                                <option value="Cliente">Cliente</option>
+                                                <option value="Administrador">Administrador</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-2">
+                                            <label class="form-label small mb-1">Región</label>
+                                            <select class="form-select form-select-sm" id="adminUserRegion" required>
+                                                <option value="">Seleccione región...</option>
+                                                <option value="metropolitana">Región Metropolitana</option>
+                                                <option value="valparaiso">Región de Valparaíso</option>
+                                                <option value="biobio">Región del Biobío</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label small mb-1">Comuna</label>
+                                            <select class="form-select form-select-sm" id="adminUserComuna" required>
+                                                <option value="">Seleccione comuna...</option>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button type="submit" class="btn btn-success btn-sm flex-grow-1" id="btnAdminGuardarUser">Guardar</button>
+                                            <button type="button" class="btn btn-secondary btn-sm" onclick="cancelarEdicionUser()">Limpiar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-7">
+                                <div class="card border-0 shadow-sm p-3">
+                                    <h5 class="fw-bold mb-3">Mostrar Usuarios</h5>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-sm align-middle mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Correo</th>
+                                                    <th>Rol</th>
+                                                    <th class="text-center">Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="adminTablaUsuarios"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 
