@@ -15,17 +15,18 @@
     </div>
 
     <nav class="nav">
-        <a href="inicio">Inicio</a>
-        <a href="productos">Productos</a>
-        <a href="nosotros">Nosotros</a>
-        <a href="blog">Blog</a>
-        <a href="contacto">Contacto</a>
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#blog">Blog</a>
+        <a href="#contacto">Contacto</a>
         <button type="button" class="btn btn-secondary text-white btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#modalLogin">
             Iniciar sesión
         </button>
-        <a href="registro" class="btn btn-secondary text-white btn-sm ms-1">
+        <button type="button" class="btn btn-secondary text-white btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#modalRegistro">
             Registrarse
-        </a>
+        </button>
+        
         <button type="button" class="btn btn-secondary text-white btn-sm ms-1" data-bs-toggle="modal" data-bs-target="#modalCarrito">
             Carrito (<span id="cartCount">0</span>)
         </button>
@@ -235,12 +236,17 @@
 
 
 
-<div class="container mt-5" id="registro">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
+<div class="modal fade" id="modalRegistro" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
 
-            <h2 class="text-center mb-4">Crear una cuenta</h2>
+```
+        <div class="modal-header">
+            <h5 class="modal-title fw-bold">Crear una cuenta</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
 
+        <div class="modal-body">
             <form id="formRegistro">
 
                 <div class="mb-3">
@@ -303,16 +309,29 @@
                 </div>
 
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-success">
                         Registrarse
                     </button>
                 </div>
 
             </form>
-
         </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Cerrar
+            </button>
+        </div>
+
     </div>
 </div>
+```
+
+</div>
+
+
+
+
 
 
 <div class="container mt-5">
@@ -459,39 +478,52 @@
 <div class="modal fade" id="modalLogin" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title fw-bold">Iniciar sesión</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
 
-            <div class="modal-body">
-                <form id="formLogin">
-
-                    <div class="mb-3">
-                        <label for="loginCorreo" class="form-label">
-                            Correo electrónico
-                        </label>
-                        <input type="email" class="form-control" id="loginCorreo" placeholder="ejemplo@gmail.com" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="loginPassword" class="form-label">
-                            Contraseña
-                        </label>
-                        <input type="password" class="form-control" id="loginPassword" placeholder="Entre 4 y 10 caracteres" required>
-                    </div>
-
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-success">
-                            Ingresar
-                        </button>
-                    </div>
-
-                </form>
-            </div>
+```
+        <div class="modal-header">
+            <h5 class="modal-title fw-bold">Iniciar sesión</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
+        <div class="modal-body">
+            <form id="formLogin">
+
+                <div class="mb-3">
+                    <label for="loginCorreo" class="form-label">
+                        Correo electrónico
+                    </label>
+                    <input type="email" class="form-control" id="loginCorreo" placeholder="ejemplo@gmail.com" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="loginPassword" class="form-label">
+                        Contraseña
+                    </label>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Entre 4 y 10 caracteres" minlength="4" maxlength="10" required>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">
+                        Ingresar
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Cerrar
+            </button>
+        </div>
+
     </div>
 </div>
+```
+
+</div>
+
+            
 
 
 <div class="modal fade" id="modalCarrito" tabindex="-1" aria-hidden="true">
