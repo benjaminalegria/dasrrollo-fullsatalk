@@ -214,7 +214,7 @@
         </div>
     </div>
 
-    
+
     <div class="container mt-5" id="nosotros">
     <div class="row align-items-center">
         <div class="col-md-6">
@@ -235,7 +235,84 @@
 
 
 
+<div class="container mt-5" id="registro">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
 
+            <h2 class="text-center mb-4">Crear una cuenta</h2>
+
+            <form id="formRegistro">
+
+                <div class="mb-3">
+                    <label for="regNombre" class="form-label">
+                        Nombre completo
+                    </label>
+                    <input type="text" class="form-control" id="regNombre" placeholder="Ingrese su nombre" maxlength="100" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="regCorreo" class="form-label">
+                        Correo electrónico
+                    </label>
+                    <div class="input-group">
+                        <span class="input-group-text">@</span>
+                        <input type="email" class="form-control" id="regCorreo" placeholder="ejemplo@correo.com" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="regPassword" class="form-label">
+                        Contraseña
+                    </label>
+                    <input type="password" class="form-control" id="regPassword" placeholder="Ingrese una contraseña (4 a 10 caracteres)" minlength="4" maxlength="10" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="regConfirmPassword" class="form-label">
+                        Confirmar contraseña
+                    </label>
+                    <input type="password" class="form-control" id="regConfirmPassword" placeholder="Repita su contraseña" minlength="4" maxlength="10" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="regTelefono" class="form-label">
+                        Número de contacto (opcional)
+                    </label>
+                    <input type="tel" class="form-control" id="regTelefono" placeholder="+56 9 1234 5678">
+                </div>
+
+                <div class="mb-3">
+                    <label for="regRegion" class="form-label">
+                        Región
+                    </label>
+                    <select class="form-select" id="regRegion" required>
+                        <option value="">Seleccione una región...</option>
+                        <option value="metropolitana">Región Metropolitana</option>
+                        <option value="valparaiso">Región de Valparaíso</option>
+                        <option value="biobio">Región del Biobío</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="regComuna" class="form-label">
+                        Comuna
+                    </label>
+                    <select class="form-select" id="regComuna" required>
+                        <option value="">Seleccione una comuna...</option>
+                    </select>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">
+                        Registrarse
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
 
    
 
