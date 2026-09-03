@@ -206,7 +206,7 @@ function iniciarValidaciones() {
                 return;
             }
             if (!validarCorreoPermitido(correo)) {
-                alert("El correo debe terminar en @duoc.cl, @profesor.duoc.cl o @gmail.com");
+                alert("El correo debe terminar en @duoc.cl o @gmail.com");
                 return;
             }
             if (pass.length < 4 || pass.length > 10) {
