@@ -54,14 +54,6 @@
         </h1>
 
         
-        <div class="my-3">
-            <img src="img/logo1.png" 
-                 class="img-fluid" 
-                 style="max-width: 170px;" 
-                 alt="Logo HuertoHogar">
-        </div>
-
-        
         <p class="fst-italic text-secondary mb-1">
             Conéctate con la naturaleza y lleva lo mejor del campo a tu mesa.
         </p>
@@ -625,7 +617,7 @@
                                         </div>
                                         <div class="mb-2">
                                             <label class="form-label small mb-1">URL Imagen</label>
-                                            <input type="url" class="form-control form-control-sm" id="adminProdImagen" placeholder="https://..." required>
+                                            <input type="url" class="form-control form-control-sm" id="adminProdImagen" placeholder="" required>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label small mb-1">Descripción</label>
@@ -650,7 +642,6 @@
                                                     <th>Nombre</th>
                                                     <th>Precio</th>
                                                     <th>Stock</th>
-                                                    <th class="text-center">Acciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="adminTablaProductos"></tbody>
@@ -691,12 +682,20 @@
                                                 <option value="metropolitana">Región Metropolitana</option>
                                                 <option value="valparaiso">Región de Valparaíso</option>
                                                 <option value="biobio">Región del Biobío</option>
+                                                
                                             </select>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label small mb-1">Comuna</label>
                                             <select class="form-select form-select-sm" id="adminUserComuna" required>
                                                 <option value="">Seleccione comuna...</option>
+                                                <option value="Santiago">Santiago</option>
+                                                <option value="valparaiso">valparaiso</option>
+                                                <option value="vina">Viña del Mar</option>
+                                                <option value="conce">Concepción</option>
+                                                <option value="naci">Nacimiento</option>
+                                                <option value="villa">Villarrica </option>
+                                                <option value="puerto">Puerto Montt </option>
                                             </select>
                                         </div>
                                         <div class="d-flex gap-2">

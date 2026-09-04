@@ -37,14 +37,14 @@
     "unidad": "kilo",
     "stock": 100,
     "descripcion": "Zanahorias crujientes cultivadas sin pesticidas en la Región de O'Higgins.",
-    "imagen": "https://images.unsplash.com/photo-1598170845058-32b9d6a5c317?w=400"
+    "imagen": "https://images.unsplash.com/photo-1447175008436-054170c2e979?w=400"
   },
   {
     "codigo": "VR002",
     "nombre": "Espinacas Frescas",
     "categoria": "Verduras Orgánicas",
     "precio": 700,
-    "unidad": "bolsa 500g",
+    "unidad": "bolsa",
     "stock": 80,
     "descripcion": "Espinacas frescas y nutritivas, cultivadas bajo prácticas orgánicas.",
     "imagen": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400"
@@ -64,9 +64,9 @@
     "nombre": "Miel Orgánica",
     "categoria": "Productos Orgánicos",
     "precio": 5000,
-    "unidad": "frasco 500g",
+    "unidad": "frasco",
     "stock": 50,
     "descripcion": "Miel pura y orgánica producida por apicultores locales.",
-    "imagen": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400"
+    "imagen": "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400"
   }
 ]
